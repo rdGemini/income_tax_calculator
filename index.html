@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="align">Tax Calculator</h1>
+  <form id="taxForm">
+    <div class="form-group">
+      <label for="grossIncome">Gross Annual Income (in Lakhs)</label>
+      <input type="text" id="grossIncome" class="form-control" required>
+      <span class="error-icon" id="grossIncomeError"></span>
+    </div>
+    <div class="form-group">
+      <label for="extraIncome">Extra Income (in Lakhs)</label>
+      <input type="text" id="extraIncome" class="form-control" required>
+      <span class="error-icon" id="extraIncomeError"></span>
+    </div>
+    <div class="form-group">
+      <label for="ageGroup">Age Group</label>
+      <select id="ageGroup" class="form-control" required>
+        <option value="" disabled selected>Select Age Group</option>
+        <option value="<40">&lt; 40</option>
+        <option value=">=40&<60">&ge; 40 &amp; &lt; 60</option>
+        <option value=">=60">&ge; 60</option>
+      </select>
+      <span class="error-icon" id="ageGroupError"></span>
+    </div>
+    <div class="form-group">
+      <label for="deduction">Total Applicable Deduction (in Lakhs)</label>
+      <input type="text" id="deduction" class="form-control" required>
+      <span class="error-icon" id="deductionError"></span>
+    </div>
+    <button type="submit" class="align btn btn-primary">Calculate Tax</button>
+  </form>
+</div>
+<div id="resultModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Tax Calculation Result</h2>
+    <p id="taxResult"></p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
